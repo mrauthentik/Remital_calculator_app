@@ -1,5 +1,7 @@
 import React from "react";
 import writing from "../images/writing.jpg"
+import HomeIcon from '@mui/icons-material/Home'
+import { blue } from "@mui/material/colors";
 export default function Main(){
      return(
         <section className="bg-cover h-screen" style={{backgroundImage: `url (${writing})`}}>
@@ -7,6 +9,7 @@ export default function Main(){
             <p className="text-black text-center">Change your percentage formular at the top right of the page</p>
 
             <div className="section flex flex-wrap gap-2 mr-2 mt-10 sm:justify-center text-left relative">
+                <HomeIcon style={{ fontSize;40, color:'blue'}}/>
                 <div className="box rounded-full md:rounded-full bx w-1/6 sm:w-16">
                     <span className="material-icons md-36">lightbulb</span>
                 </div> <p className="text-xs sm:text-lg mt-4 "> How it works</p>
