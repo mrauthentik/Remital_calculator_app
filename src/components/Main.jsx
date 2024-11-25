@@ -1,7 +1,11 @@
 import React from "react";
 import writing from "../images/writing.jpg"
-import HomeIcon from '@mui/icons-material/Home'
-import { blue } from "@mui/material/colors";
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import EditIcon from '@mui/icons-material/Edit';
+import SendIcon from '@mui/icons-material/Send';
+import CheckIcon from '@mui/icons-material/Check';
+import { green } from "@mui/material/colors";
+import { white } from "@mui/material/colors";
 export default function Main(){
      return(
         <section className="bg-cover h-screen" style={{backgroundImage: `url (${writing})`}}>
@@ -9,21 +13,22 @@ export default function Main(){
             <p className="text-black text-center">Change your percentage formular at the top right of the page</p>
 
             <div className="section flex flex-wrap gap-2 mr-2 mt-10 sm:justify-center text-left relative">
-                <HomeIcon style={{ fontSize;40, color:'blue'}}/>
+                
                 <div className="box rounded-full md:rounded-full bx w-1/6 sm:w-16">
-                    <span className="material-icons md-36">lightbulb</span>
+                   
                 </div> <p className="text-xs sm:text-lg mt-4 "> How it works</p>
                 <div className="box1  rounded-full bx w-1/6 sm:w-16">
-                    <span className="material-icons md-24"> edit</span>
+                <LightbulbIcon style={{color:green['#006400']}}/>
                 </div> 
                 <p className="text-xs sm:text-lg mt-4">Tithe and offering</p>
                 <div className="box2 rounded-full bx w-1/6 sm:w-16">
-                    <span className="material-icons md-24">send</span>
+                    <EditIcon style={{ color:green['#006400']}}/>
                 </div> <p className="text-xs sm:text-lg mt-4"> Click submit</p>
                 <div className="box3 rounded-full bx w-1/6 sm:w-16">
-                    <span className="material-icons md-24">check</span>
+                    <SendIcon style={{color:green['#006400']}} className=" rounded-xl  "/>
                 </div>
                 <p className="text-xs sm:text-lg mt-4">You are good to go</p>
+                <CheckIcon style={{color:green['#006400']}}/>
             </div>
             
            
