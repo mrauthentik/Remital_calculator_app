@@ -23,7 +23,7 @@ button{
     margin-right: 1rem;
 }
 .head{
-    mask-image: linear-gradient(to right, transparent, black 75%);
+    /* mask-image: linear-gradient(to left, transparent, rgb(0, 0, 0) 50%); */
 }
 
 /* Modal styling here */
@@ -72,4 +72,16 @@ button{
 }
 .modal >button:hover{
     background-color: rgb(3, 11, 3);
+}
+@media only screen and (max-width: 390px){
+    .modal{
+        width: 80%;
+    }
+    .modal >button{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+    }
 }
