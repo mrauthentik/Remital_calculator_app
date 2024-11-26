@@ -6,7 +6,22 @@ import SendIcon from '@mui/icons-material/Send';
 import CheckIcon from '@mui/icons-material/Check';
 import { green } from "@mui/material/colors";
 import { white } from "@mui/material/colors";
-export default function Main(){
+export default function Main({
+    offering,
+  setOffering,
+  tithe,
+  setTithe,
+  expenditures,
+  setExpenditures,
+  handleCalculate,
+  totalIncome,
+  headquarters,
+  zone,
+  chapter,
+  unit,
+  unitExpen,
+  show
+}){
      return(
         <section className="bg-cover h-screen" style={{backgroundImage: `url (${writing})`}}>
             <h1 className="text-black font-bold text-4xl text-center">Horemow Monthly Calculator</h1>
@@ -34,13 +49,46 @@ export default function Main(){
            
                   <form action="#" className="flex justify-center" >
                       <div className="">
-                        <input type="number" placeholder="Tithe" required id="inputTithe" className="mb-5  sm:mt-10 rounded-1xl bg-gray-200 ml-4 ml-4 h-8 rounded-lg p-4 focus:outline-none " />
-                        <input type="number" placeholder="offering" required id="inputOffering" className="mb-5 md:mb-0 rounded-1xl bg-gray-200 ml-4 ml-4 h-8 rounded-lg p-4 focus:outline-none "  />
-                        <input type="number" placeholder="Expenditures" id="expense" className="mb-5 md:mb-0 bg-gray-200 ml-4 h-8 rounded-lg p-4 focus:outline-none " />
+                        <input 
+                        type="number" 
+                        value={tithe}
+                        onChange={(e)=> setTithe(e.target.value)}
+                        placeholder="Tithe" 
+                        required 
+                        className="mb-5  sm:mt-10 rounded-1xl bg-gray-200 ml-4 ml-4 h-8 rounded-lg p-4 focus:outline-none " />
+                        <input 
+                        type="number" 
+                        placeholder="offering" 
+                        required 
+                        value={offering}
+                        onChange={(e)=> setOffering(e.target.value)} 
+                        className="mb-5 md:mb-0 rounded-1xl bg-gray-200 ml-4 ml-4 h-8 rounded-lg p-4 focus:outline-none"  
+                        />
+                        <input 
+                        type="number" 
+                        placeholder="Expenditures" 
+                        value={expenditures}
+                        onChange={(e) => setExpenditures(e.target.value)}
+                        className="mb-5 md:mb-0 bg-gray-200 ml-4 h-8 rounded-lg p-4 focus:outline-none " 
+                        />
                       </div>
-                    <button className="w-1/6 h-8 rounded-lg bg-green-800 text-white" id="submit" type="submit" > <a href="#unitExp">Submit</a>  </button>
-                    <div type="text" id="totalIncome" className=" text-black-100 bg-green-400 w-40 sm:mt-9xl sm:text-red mt-10 mr-7-11 rounded-lg text-center h-8">
-                        Total Income
+                    <button 
+                    className="w-1/6 h-8 rounded-lg bg-green-800 text-white" 
+                    onClick= {(e) =>{
+                        e.preventDefault()
+                        handleCalculate()
+                        show()
+                    }}
+                    type="submit" > 
+                         <a href="#unitExp">
+                            Submit
+                         </a> 
+                     </button>
+                    <div 
+                    type="text" 
+                    id="totalIncome" 
+                    className=" text-black-100 bg-green-400 w-40 sm:mt-9xl sm:text-red mt-10 mr-7-11 rounded-lg text-center h-8">
+                        Total Income: {totalIncome}
                     </div>
                     </form>  
             
@@ -52,17 +100,17 @@ export default function Main(){
                 <div className="headqrts bg-green-900 rounded-2xl sm:w-1/4  w-1/4 mt-3 mb-3 ml-20">
                     <p className="text-white p-2 font-bold text-center">
                         0.5%
-                        Headquaters
+                        Headquaters: 
                     </p>
-                    <div id="headqrts" className="text-green-500 text-xl text-center font-bold">0</div>
+                    <div id="headqrts" className="text-green-500 text-xl text-center font-bold">{headquarters}</div>
 
                 </div>
                 <div className="zone bg-green-900 rounded-2xl sm:w-1/4 w-1/4 mt-3 mb-3 ml-20">
                     <p className="text-white p-2 font-bold text-center" id="zoneP">
                         0.2%
-                        Zone
+                        Zone:
                     </p>
-                    <div id="zone" className="text-green-500 text-xl text-center font-bold">0</div>
+                    <div id="zone" className="text-green-500 text-xl text-center font-bold">{zone}</div>
 
                 </div>
                 <div className="chapter bg-green-900 rounded-2xl sm:w-1/  w-1/4 mt-3 mb-3 ml-20">
@@ -70,7 +118,7 @@ export default function Main(){
                         0.1%
                         Chapter
                     </p>
-                    <div id="chapter" className="text-green-500 text-xl text-center font-bold">0</div>
+                    <div id="chapter" className="text-green-500 text-xl text-center font-bold">{chapter}</div>
 
                 </div>
                 <div className="unit bg-green-900 rounded-2xl sm:w-1/4 w-1/6 mt-3 mb-3 ml-20">
@@ -78,7 +126,7 @@ export default function Main(){
                         0.2%
                         Unit
                     </p>
-                    <div id="unit" className="text-green-500 text-xl text-center font-bold">0</div>
+                    <div id="unit" className="text-green-500 text-xl text-center font-bold">{unit}</div>
 
                 </div>
                 <div className="unit_bf bg-green-900 rounded-2xl sm:w-1/4 w-1/4 mt-3 mb-3 ml-20">
@@ -86,7 +134,7 @@ export default function Main(){
                         Unit B/F
                         
                     </p >
-                    <div id="unitExp" className="text-green-500 text-xl text-center font-bold">{0}</div>
+                    <div id="unitExp" className="text-green-500 text-xl text-center font-bold">{unitExpen}</div>
                         
                 </div>
             </div>
