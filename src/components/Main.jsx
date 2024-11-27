@@ -25,7 +25,7 @@ export default function Main({
 }){
      return(
         <section className="bg-cover h-screen" style={{backgroundImage: `url (${writing})`}} >
-            <h1 className="text-black font-bold text-4xl text-center">Horemow Monthly Calculator</h1>
+            <h1 className="text-black font-bold text-4xl text-center"> Monthly Calculator</h1>
             <p className="text-black text-center">Change your percentage formular at the top right of the page</p>
 
             <div className="section flex flex-wrap gap-2 mr-2 mt-10 sm:justify-center text-left relative">
