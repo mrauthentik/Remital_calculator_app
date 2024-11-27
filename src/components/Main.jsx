@@ -90,7 +90,7 @@ export default function Main({
                     <div 
                     type="text" 
                     id="totalIncome" 
-                    className=" text-black-100 bg-green-400 w-40 sm:mt-9xl sm:text-red mt-10 mr-7-11 rounded-lg text-center h-8">
+                    className=" text-black-100 bg-green-400 w-40 sm:mt-9xl sm:text-red mt-10 mr-7-11 rounded-lg text-center h-8 totalIncome">
                         Total Income: {totalIncome}
                     </div>
                     </form>  

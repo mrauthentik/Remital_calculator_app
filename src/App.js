@@ -5,15 +5,16 @@ import Modal from './components/Modal'
 import Calculator from './components/calculator';
 import { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify'
+import logo from './Horemow.png'
 import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
   // State variables for sharing data between components
   const [selectOption, setSelectOption] = useState('');
-  const [offering, setOffering] = useState(0);
-  const [tithe, setTithe] = useState(0);
-  const [expenditures, setExpenditures] = useState(0);
+  const [offering, setOffering] = useState('');
+  const [tithe, setTithe] = useState("");
+  const [expenditures, setExpenditures] = useState("");
   const [totalIncome, setTotalIncome] = useState(0);
   const [unitExpen, setUnitExpen] = useState(0);
   const [headquarters, setHeadquarters] = useState(0);
@@ -85,7 +86,7 @@ function App() {
     <div>
       <ToastContainer />
       <Header 
-      image={'/images/horemow.png'}
+      image={logo}
       selectOption={selectOption}
       setSelectOption={setSelectOption}
       />

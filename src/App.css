@@ -25,7 +25,9 @@ button{
 .head{
     /* mask-image: linear-gradient(to left, transparent, rgb(0, 0, 0) 50%); */
 }
-
+select{
+    font-size:14px;
+}
 /* Modal styling here */
 
 .modal-background{
@@ -83,5 +85,23 @@ button{
         align-items: center;
         justify-content: center;
         padding: 8px;
+    }
+    select{
+        font-size:10px;
+    }
+}
+
+@media (max-width:500px) {
+    div,section{
+    overflow-y:hidden;
+    }
+   .header > h1{
+    text-align: center;
+   }
+    button{
+        margin-left:-70% ;
+    }
+    select{
+        font-size:10px;
     }
 }
