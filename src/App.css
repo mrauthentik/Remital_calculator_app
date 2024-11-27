@@ -92,9 +92,9 @@ select{
 }
 
 @media (max-width:500px) {
-    div,section{
+    /* div,section{
     overflow-y:hidden;
-    }
+    } */
    .header > h1{
     text-align: center;
    }
