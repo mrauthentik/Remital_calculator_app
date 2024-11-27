@@ -94,6 +94,7 @@ export default function Main({
                             Submit
                          </a> 
                      </button>
+                     <br />
                     <div 
                     type="text" 
                     id="totalIncome" 
