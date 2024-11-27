@@ -50,13 +50,13 @@ function App() {
         setZone(total * 0.4);
         setChapter(total * 0.2);
         setUnit(total * 0.1);
-        console.log('State has been selected')
+        console.log('There is no remittal settings for State')
         toast.success('State is selected')
       }else if (selectOption === "chapter"){
           console.log('Chapter has been selected')
           toast.error('There is no remital setting for Chapter')
       }else if (selectOption === 'zone'){
-        toast.error('There is no Remittal setting for Chapter')
+        toast.error('There is no Remittal setting for Zone')
         console.log('Zone has been selected')
       }
 
