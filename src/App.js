@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 
 function App() {
   // State variables for sharing data between components
-  const [selectOption, setSelectOption] = useState('Zone');
+  const [selectOption, setSelectOption] = useState('');
   const [offering, setOffering] = useState(0);
   const [tithe, setTithe] = useState(0);
   const [expenditures, setExpenditures] = useState(0);
@@ -30,21 +30,27 @@ function App() {
       setTotalIncome(total);
 
       let unitIncome = 0;
-      if (selectOption === 'Zone') {
+      if (selectOption === 'unit') {
         unitIncome = total * 0.2;
         setZonePercentage('20% Zone');
         setHeadquarters(total * 0.5);
         setZone(total * 0.2);
         setChapter(total * 0.1);
         setUnit(total * 0.2);
-        console.log('Zone has been selected')
-      } else if (selectOption === 'State') {
+        console.log('Unit has been selected')
+      } else if (selectOption === 'state') {
         unitIncome = total * 0.1;
         setZonePercentage('40% State');
         setHeadquarters(total * 0.3);
         setZone(total * 0.4);
         setChapter(total * 0.2);
         setUnit(total * 0.1);
+        console.log('State is selected')
+      }else if (selectOption === "chapter"){
+          console.log('Chapter has been selected')
+          alert('There is no remital setting for Chapter')
+      }else if (selectOption === 'zone'){
+        console.log('Zone has been selected')
       }
 
       setUnitExpen(total - expenditures);

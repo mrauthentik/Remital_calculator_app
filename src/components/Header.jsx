@@ -5,7 +5,7 @@ export default function Header({selectOption, setSelectOption, image}){
  
      return(
          <div className='bg-black text-white p-4 flex justify-between head bg-center bg-no-repeat ' style={{backgroundImage:`url(${writing})`}}>
-         <img src={image} alt="" srcset="" className="w-2/4 h-2/4 relative w-20 sm:ml-0 sm:w-20 sm:h-20" />
+         <img src={image} alt=""  className="w-2/4 h-2/4 relative w-20 sm:ml-0 sm:w-20 sm:h-20" />
         <h1 className="font-bold text-4xl" style={{textShadow:' 2px 2px 4px rgba(0, 0, 0, 0.9)'}}>Remittal Calculator</h1>
        
         <form action="#">
