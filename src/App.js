@@ -34,7 +34,7 @@ function App() {
       setTotalIncome(total);
 
       let unitIncome = 0;
-      if (selectOption === 'unit') {
+      if (selectOption === 'Unit') {
         unitIncome = total * 0.2;
         setZonePercentage('20% Zone');
         setHeadquarters(total * 0.5);
@@ -43,7 +43,7 @@ function App() {
         setUnit(total * 0.2);
         console.log('Unit State has been selected')
         toast.success('Unit has been selected')
-      } else if (selectOption === 'state') {
+      } else if (selectOption === 'State') {
         unitIncome = total * 0.1;
         setZonePercentage('40% State');
         setHeadquarters(total * 0.3);
@@ -52,10 +52,10 @@ function App() {
         setUnit(total * 0.1);
         console.log('There is no remittal settings for State')
         toast.success('State is selected')
-      }else if (selectOption === "chapter"){
+      }else if (selectOption === "Chapter"){
           console.log('Chapter has been selected')
           toast.error('There is no remital setting for Chapter')
-      }else if (selectOption === 'zone'){
+      }else if (selectOption === 'Zone'){
         toast.error('There is no Remittal setting for Zone')
         console.log('Zone has been selected')
       }

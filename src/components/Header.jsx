@@ -17,10 +17,10 @@ export default function Header({selectOption, setSelectOption, image}){
               className="rounded bg-green-600 text-white mb-1 p-4 pt-2 w-20 h-12 sm:w-24 focus:outline-none"
               >
                 <option value="">-Select-</option>
-            <option value="unit">Unit</option>
-            <option value="chapter">Chapter</option>
-            <option value="zone">Zone</option>
-            <option value="state">State</option>
+            <option value="Unit">Unit</option>
+            <option value="Chapter">Chapter</option>
+            <option value="Zone">Zone</option>
+            <option value="State">State</option>
          </select>
         </form>
           
