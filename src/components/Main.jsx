@@ -6,6 +6,7 @@ import SendIcon from '@mui/icons-material/Send';
 import CheckIcon from '@mui/icons-material/Check';
 import { green } from "@mui/material/colors";
 import { white } from "@mui/material/colors";
+import { toast } from "react-toastify";
 export default function Main({
     offering,
   setOffering,
@@ -78,6 +79,8 @@ export default function Main({
                         e.preventDefault()
                         handleCalculate()
                         show()
+                        toast.success('PDF has been successfully Generated!')
+                        
                     }}
                     type="submit" > 
                          <a href="#unitExp">

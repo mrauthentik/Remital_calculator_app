@@ -5,7 +5,8 @@ import Modal from './components/Modal'
 import Calculator from './components/calculator';
 import { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify'
-import 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   // State variables for sharing data between components
@@ -39,7 +40,8 @@ function App() {
         setZone(total * 0.2);
         setChapter(total * 0.1);
         setUnit(total * 0.2);
-        console.log('Unit has been selected')
+        console.log('Unit State has been selected')
+        toast.success('Unit has been selected')
       } else if (selectOption === 'state') {
         unitIncome = total * 0.1;
         setZonePercentage('40% State');
@@ -47,11 +49,13 @@ function App() {
         setZone(total * 0.4);
         setChapter(total * 0.2);
         setUnit(total * 0.1);
-        console.log('State is selected')
+        console.log('State has been selected')
+        toast.success('State is selected')
       }else if (selectOption === "chapter"){
           console.log('Chapter has been selected')
-          alert('There is no remital setting for Chapter')
+          toast.error('There is no remital setting for Chapter')
       }else if (selectOption === 'zone'){
+        toast.error('There is no Remittal setting for Chapter')
         console.log('Zone has been selected')
       }
 
