@@ -98,9 +98,7 @@ select{
    .header > h1{
     text-align: center;
    }
-    button{
-        margin-left:-70% ;
-    }
+    
     select{
         font-size:10px;
     }
