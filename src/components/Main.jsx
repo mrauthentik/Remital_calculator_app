@@ -23,6 +23,10 @@ export default function Main({
   unitExpen,
   show,
 }){
+    const playSuccessSound = () =>{
+        const audio = new Audio('/success.mp3')
+        audio.play()
+    }
      return(
         <section className="bg-cover h-screen" style={{backgroundImage: `url (${writing})`}} >
             <h1 className="text-black font-bold text-4xl text-center"> Monthly Calculator</h1>
@@ -79,7 +83,10 @@ export default function Main({
                         e.preventDefault()
                         handleCalculate()
                         show()
-                        toast.success('PDF has been successfully Generated!')
+                
+                        toast.success('PDF has been successfully Generated!', {
+                            onOpen: playSuccessSound,
+                        })
                         
                     }}
                     type="submit" > 
