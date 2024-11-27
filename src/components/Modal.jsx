@@ -4,19 +4,25 @@ import jsPDF from 'jspdf'
     const Modal = ({ onClose, data}) =>{
         const downloadPDF = () =>{
             const doc = new jsPDF()
-            doc.text("Financial Report", 10,10)
+
+            doc.text(  `Finacial Report for ${data.selectOption}`, 10,10)
             doc.text(`Offering: ${data.offering ?? 'N/A'}`, 10,20)
             doc.text(`Tithe: ${data.tithe ?? 'N/A'}`, 10,30)
-            doc.text(`Tithe: ${data.unitExpen ?? 'N/A'}`, 10, 40)
-            doc.text(`Total Income: ${data.totalIncome ?? 'N/A'}`, 10, 50)
-            doc.text(`Balance: ${data.expenditures ?? 'N/A'}`, 10,60)
-            // doc.text(`Tithe: ${data.tithe}, 10, 30`)
+            doc.text(`Expenditures: ${data.expenditures ?? 'N/A'}`, 10, 40)
+            doc.text(`${data.selectOption} Balance Carry Forward: ${data.expenditures ?? 'N/A'}`, 10, 50)
+            doc.text(`Total Income: ${data.totalIncome ?? 'N/A'}`, 10, 60)
+            doc.text(`Balance: ${data.unitExpen ?? 'N/A'}`, 10,70)
+            doc.text(`Precentage Sharing ?? 'N/A'}`, 10,80)
+            doc.text(`Unit: ${data.unit ?? 'N/A'}`, 10,90)
+            doc.text(`Chapter: ${data.chapter ?? 'N/A'}`, 10,100)
+            doc.text(`Zone: ${data.zone ?? 'N/A'}`, 10,110)
+            doc.text(`Head Quarters: ${data.headquarters ?? 'N/A'}`, 10,120)
             doc.save('Financial_Report.pdf')
         }
         return(
             <div className="modal-background">
                 <div className="modal">
-                    <h2>Financial Summary</h2>
+                    <h2>Financial Summary for {data.selectOption}</h2>
                     <p>Offering: <span>{data.offering}</span> </p>
                     <p>Tithe: <span>{data.tithe}</span> </p>
                     <p>Total Income: <span>{data.totalIncome}</span> </p>

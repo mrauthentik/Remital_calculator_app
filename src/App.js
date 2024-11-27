@@ -123,7 +123,8 @@ function App() {
           zone,
           chapter,
           expenditures,
-          unit
+          unit,
+          selectOption
          }}
         />
       )}
