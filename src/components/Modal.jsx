@@ -5,12 +5,31 @@ import jsPDF from 'jspdf'
         const downloadPDF = () =>{
             const doc = new jsPDF()
 
-            doc.text(  `Finacial Report for ${data.selectOption}`, 10,10)
+            doc.setTextColor(0, 0, 255);
+            doc.setFontSize(16)
+            doc.setFont("helvetica", "bold")
+            const title =  `Finacial Report for ${data.selectOption}`
+            const percentage = `${data.selectOption} Balance Carry Forward: ${data.expenditures}`
+            const titleWidth = doc.getTextWidth(title)
+            const percentageWidth = doc.getTextWidth(percentage)
+            doc.text(title, (doc.internal.pageSize.width - titleWidth) / 2, 10);
+
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(12)
+            doc.setFont("helvetica", "normal")
             doc.text(`Offering: ${data.offering ?? 'N/A'}`, 10,20)
             doc.text(`Tithe: ${data.tithe ?? 'N/A'}`, 10,30)
             doc.text(`Expenditures: ${data.expenditures ?? 'N/A'}`, 10, 40)
-            doc.text(`${data.selectOption} Balance Carry Forward: ${data.expenditures ?? 'N/A'}`, 10, 50)
-            doc.text(`Total Income: ${data.totalIncome ?? 'N/A'}`, 10, 60)
+            
+            doc.setTextColor(0, 0, 255);
+            doc.setFontSize(16)
+            doc.setFont("helvetica", 'bold')
+            doc.text(percentage, (doc.internal.pageSize.width - percentageWidth))
+            
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(12)
+            doc.setFont('helvetica', 'normal')
+            doc.text(`Total Income: ${data.totalIncome }`, 10, 60)
             doc.text(`Balance: ${data.unitExpen ?? 'N/A'}`, 10,70)
             doc.text(`Precentage Sharing ?? 'N/A'}`, 10,80)
             doc.text(`Unit: ${data.unit ?? 'N/A'}`, 10,90)
