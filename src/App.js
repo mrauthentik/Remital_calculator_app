@@ -4,6 +4,8 @@ import Main from './components/Main';
 import Modal from './components/Modal'
 import Calculator from './components/calculator';
 import { useState, useEffect } from 'react';
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify'
 
 function App() {
   // State variables for sharing data between components
@@ -77,6 +79,7 @@ function App() {
   }
   return (
     <div>
+      <ToastContainer />
       <Header 
       image={'/images/horemow.png'}
       selectOption={selectOption}
