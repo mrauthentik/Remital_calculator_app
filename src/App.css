@@ -2,7 +2,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+*{
+    font-family: 'Poppins';
+}
 section{
     padding-left: 10px;
 }
@@ -86,8 +88,14 @@ select{
         justify-content: center;
         padding: 8px;
     }
-    select{
-        font-size:10px;
+     .header-select{
+        
+        width: 60%;
+        height: 10%;
+    }
+    .section-header.text{
+        font-size: 20px;
+        
     }
     .chapter,.unit,.zone,.headquarters{
         font-size: 10px;
@@ -101,13 +109,39 @@ select{
     .text-head{
         font-size:16px;
     }
-    /* div,section{
-    overflow-y:hidden;
-    } */
    .header > h1{
     text-align: center;
    }
-    
+   .section-header-text{
+    font-size: 20px;
+   }
+   .main-top-text{
+    font-size: 15px;
+    width: 80%;
+    margin: auto auto;
+    text-align: center;
+    color: rgb(1, 29, 1);
+   }
+   .howitworksSection{
+    margin-left: -15%;
+    margin-bottom: 10%;
+   }
+    .btn button{
+        width: 90%;
+        font-size: 7px;
+        margin-top: 0%;
+        margin-left: -65%;
+        display: block;
+        padding: 0;
+    }
+    .btn .totalincome{
+        width: 100%;
+        padding: 5px;
+        height: 40%;
+        margin-top: -5%;
+        margin-left: -65%;
+        font-weight: 600;
+    }
     select{
         font-size:10px;
     }

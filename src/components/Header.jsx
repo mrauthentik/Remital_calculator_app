@@ -14,7 +14,7 @@ export default function Header({selectOption, setSelectOption, image}){
               value={selectOption}
               onChange={(e) => setSelectOption(e.target.value)}
               id="header-select" 
-              className="rounded bg-green-600 text-white mb-1 p-4 pt-2 w-20 h-12 sm:w-24 focus:outline-none"
+              className=" header-select rounded bg-green-600 text-white mb-1 p-4 pt-2 w-20 h-12 sm:w-24 focus:outline-none"
               >
                 <option value="">-Select-</option>
             <option value="Unit">Unit</option>

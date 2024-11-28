@@ -32,10 +32,10 @@ export default function Main({
     
      return(
         <section className="bg-cover h-screen" style={{backgroundImage: `url (${writing})`}} >
-            <h1 className="text-black font-bold text-4xl text-center"> Monthly Calculator</h1>
-            <p className="text-black text-center">Change your percentage formular at the top right of the page</p>
+            <h1 className="section-header-text text-black font-bold text-4xl text-center"> Monthly Calculator</h1>
+            <p className=" main-top-text text-black text-center">Change your percentage formular at the top right of the page</p>
 
-            <div className="section flex flex-wrap gap-2 mr-2 mt-10 sm:justify-center text-left relative">
+            <div className="howitworksSection flex flex-wrap gap-2 mr-2 mt-10 sm:justify-center text-left relative">
                 
                 <div className="box rounded-full md:rounded-full bx w-1/6 sm:w-16">
                    
@@ -80,30 +80,33 @@ export default function Main({
                         className="mb-5 md:mb-0 bg-gray-200 ml-4 h-8 rounded-lg p-4 focus:outline-none " 
                         />
                       </div>
-                    <button 
-                    className="w-1/6 h-8 rounded-lg bg-green-800 text-white" 
-                    onClick= {(e) =>{
-                        e.preventDefault()
-                        handleCalculate()
-                        show()
-                
-                        toast.success('PDF has been successfully Generated!', {
-                            onOpen: playSuccessSound,
-                        })
-                        
-                    }}
-                    type="submit" > 
-                         <a href="#unitExp" className="text-sm">
-                            Submit
-                         </a> 
-                     </button>
-                     <br />
-                    <div 
-                    type="text" 
-                    id="totalIncome" 
-                    className="text-sm text-black-100 bg-green-400 w-40 sm:mt-9xl sm:text-red mt-10 mr-7-11 rounded-lg text-center h-8 totalIncome">
-                        Total Income: {totalIncome}
-                    </div>
+                      <div className="btn">
+
+                        <button 
+                        className="w-1/6 h-8 rounded-lg bg-green-800 text-white" 
+                        onClick= {(e) =>{
+                            e.preventDefault()
+                            handleCalculate()
+                            show()
+                    
+                            toast.success('PDF has been successfully Generated!', {
+                                onOpen: playSuccessSound,
+                            })
+                            
+                        }}
+                        type="submit" > 
+                            <a href="#unitExp" className="text-sm">
+                                Submit
+                            </a> 
+                        </button>
+                        <br />
+                        <div 
+                        type="text" 
+                        id="totalIncome" 
+                        className="totalincome text-sm text-black-100 bg-green-400 w-40 sm:mt-9xl sm:text-red mt-10 mr-7-11 rounded-lg text-center h-8 totalIncome">
+                            Total Income: {totalIncome}
+                        </div>
+                      </div>
                     </form>  
             
         
