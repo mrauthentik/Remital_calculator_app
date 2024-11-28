@@ -92,9 +92,15 @@ select{
     .chapter,.unit,.zone,.headquarters{
         font-size: 10px;
     }
+    .text-head{
+        font-size:16px;
+    }
 }
 
 @media (max-width:500px) {
+    .text-head{
+        font-size:16px;
+    }
     /* div,section{
     overflow-y:hidden;
     } */
