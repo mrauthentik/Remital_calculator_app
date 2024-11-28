@@ -27,7 +27,7 @@ const Modal = ({ onClose, data }) => {
     doc.setTextColor(0, 128, 0); // green
     doc.setFontSize(16);
     doc.setFont("helvetica", "bold");
-    const percentage = `Percentage Sharing`;
+    const percentage = `Percentage Sharing`; 
     const percentageWidth = doc.getTextWidth(percentage);
     doc.text(percentage, (doc.internal.pageSize.width - percentageWidth) / 2, 90); // Centered
 

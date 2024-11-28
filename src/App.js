@@ -18,6 +18,7 @@ function App() {
   const [totalIncome, setTotalIncome] = useState(0);
   const [unitExpen, setUnitExpen] = useState(0);
   const [headquarters, setHeadquarters] = useState(0);
+  const [state, setState] = useState(0)
   const [zone, setZone] = useState(0);
   const [chapter, setChapter] = useState(0);
   const [unit, setUnit] = useState(0);
@@ -45,13 +46,14 @@ function App() {
         toast.success('Unit has been selected')
       } else if (selectOption === 'State') {
         unitIncome = total * 0.1;
-        setZonePercentage('40% State');
+        setState('40% State');
         setHeadquarters(total * 0.3);
         setZone(total * 0.4);
         setChapter(total * 0.2);
         setUnit(total * 0.1);
         console.log('There is no remittal settings for State')
-        toast.success('State is selected')
+        // toast.success('State has been selected!')
+        toast.info('State Calculation has not been set correctly.')
       }else if (selectOption === "Chapter"){
           console.log('Chapter has been selected')
           toast.error('There is no remital setting for Chapter')
@@ -100,6 +102,7 @@ function App() {
         handleCalculate={handleCalculate}
         totalIncome={totalIncome}
         headquarters={headquarters}
+        state={state}
         zone={zone}
         chapter={chapter}
         unit={unit}

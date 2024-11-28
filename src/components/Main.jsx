@@ -9,6 +9,7 @@ import { white } from "@mui/material/colors";
 import { toast } from "react-toastify";
 export default function Main({
     offering,
+    selectOption,
   setOffering,
   tithe,
   setTithe,
@@ -18,6 +19,7 @@ export default function Main({
   totalIncome,
   headquarters,
   zone,
+  state,
   chapter,
   unit,
   unitExpen,
@@ -27,6 +29,7 @@ export default function Main({
         const audio = new Audio('/success.mp3')
         audio.play()
     }
+    
      return(
         <section className="bg-cover h-screen" style={{backgroundImage: `url (${writing})`}} >
             <h1 className="text-black font-bold text-4xl text-center"> Monthly Calculator</h1>
@@ -36,23 +39,23 @@ export default function Main({
                 
                 <div className="box rounded-full md:rounded-full bx w-1/6 sm:w-16">
                    
-                </div> <p className="text-xs sm:text-lg mt-4 "> How it works</p>
+                </div> <p className="text-xs sm:text-lg mt-4 text-sm "> How it works</p>
                 <div className="box1  rounded-full bx w-1/6 sm:w-16">
                 <LightbulbIcon style={{color:green['#006400']}}/>
                 </div> 
-                <p className="text-xs sm:text-lg mt-4">Tithe and offering</p>
-                <div className="box2 rounded-full bx w-1/6 sm:w-16">
+                <p className="text-xs sm:text-lg mt-4 text-sm">Tithe and offering</p>
+                <div className="box2 rounded-full bx w-1/6 sm:w-16 text-sm">
                     <EditIcon style={{ color:green['#006400']}}/>
-                </div> <p className="text-xs sm:text-lg mt-4"> Click submit</p>
-                <div className="box3 rounded-full bx w-1/6 sm:w-16">
+                </div> <p className="text-xs sm:text-lg mt-4 text-sm"> Click submit</p>
+                <div className="box3 rounded-full bx w-1/6 sm:w-16 text-sm">
                     <SendIcon style={{color:green['#006400']}} className=" rounded-xl  "/>
                 </div>
-                <p className="text-xs sm:text-lg mt-4">You are good to go</p>
+                <p className="text-xs sm:text-lg mt-4 text-sm">You are good to go</p>
                 <CheckIcon style={{color:green['#006400']}}/>
             </div>
             
            
-                  <form action="#" className="flex justify-center" >
+                  <form action="#" className="flex justify-center text-sm" >
                       <div className="">
                         <input 
                         type="number" 
@@ -90,7 +93,7 @@ export default function Main({
                         
                     }}
                     type="submit" > 
-                         <a href="#unitExp">
+                         <a href="#unitExp" className="text-sm">
                             Submit
                          </a> 
                      </button>
@@ -98,7 +101,7 @@ export default function Main({
                     <div 
                     type="text" 
                     id="totalIncome" 
-                    className=" text-black-100 bg-green-400 w-40 sm:mt-9xl sm:text-red mt-10 mr-7-11 rounded-lg text-center h-8 totalIncome">
+                    className="text-sm text-black-100 bg-green-400 w-40 sm:mt-9xl sm:text-red mt-10 mr-7-11 rounded-lg text-center h-8 totalIncome">
                         Total Income: {totalIncome}
                     </div>
                     </form>  
@@ -109,23 +112,23 @@ export default function Main({
         <h2 className="font-extrabold text-center text-green-800 font-serif text-xl">Percentage Sharing</h2>
             <div className="sharing sm:flex  justify-between bg-green 950 w-8xl ml-2 mr-5 sm:flex-wrap flex flex-wrap gap-2 ">
                 <div className="headqrts bg-green-900 rounded-2xl sm:w-1/4  w-1/4 mt-3 mb-3 ml-20">
-                    <p className="text-white p-2 font-bold text-center">
+                    <p className="text-white p-2 font-bold text-center text-sm">
                         0.5%
                         Headquaters: 
                     </p>
-                    <div id="headqrts" className="text-green-500 text-xl text-center font-bold">{headquarters}</div>
+                    <div id="headqrts" className="text-green-500 text-xl text-center font-bold text-sm">{headquarters}</div>
 
                 </div>
                 <div className="zone bg-green-900 rounded-2xl sm:w-1/4 w-1/4 mt-3 mb-3 ml-20">
-                    <p className="text-white p-2 font-bold text-center" id="zoneP">
+                    <p className="text-white p-2 font-bold text-center text-sm" id="zoneP">
                         0.2%
-                        Zone:
+                       Zone
                     </p>
                     <div id="zone" className="text-green-500 text-xl text-center font-bold">{zone}</div>
 
                 </div>
                 <div className="chapter bg-green-900 rounded-2xl sm:w-1/  w-1/4 mt-3 mb-3 ml-20">
-                    <p className="text-white p-2 font-bold text-center">
+                    <p className="text-white p-2 font-bold text-center text-sm">
                         0.1%
                         Chapter
                     </p>
@@ -133,7 +136,7 @@ export default function Main({
 
                 </div>
                 <div className="unit bg-green-900 rounded-2xl sm:w-1/4 w-1/6 mt-3 mb-3 ml-20">
-                    <p className="text-white p-2 font-bold text-center">
+                    <p className="text-white p-2 font-bold text-center text-sm">
                         0.2%
                         Unit
                     </p>
@@ -141,11 +144,11 @@ export default function Main({
 
                 </div>
                 <div className="unit_bf bg-green-900 rounded-2xl sm:w-1/4 w-1/4 mt-3 mb-3 ml-20">
-                    <p className="text-white p-2 font-bold text-center">
+                    <p className="text-white p-2 font-bold text-center text-sm">
                         Unit B/F
                         
                     </p >
-                    <div id="unitExp" className="text-green-500 text-xl text-center font-bold">{unitExpen}</div>
+                    <div id="unitExp" className="text-green-500 text-xl text-sm text-center font-bold">{unitExpen}</div>
                         
                 </div>
             </div>

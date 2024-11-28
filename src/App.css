@@ -89,6 +89,9 @@ select{
     select{
         font-size:10px;
     }
+    .chapter,.unit,.zone,.headquarters{
+        font-size: 10px;
+    }
 }
 
 @media (max-width:500px) {
@@ -101,5 +104,8 @@ select{
     
     select{
         font-size:10px;
+    }
+    .chapter,.unit,.zone,.headquarters{
+        font-size: 10px;
     }
 }
