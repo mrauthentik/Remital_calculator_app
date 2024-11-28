@@ -112,7 +112,7 @@ export default function Main({
         
 
           
-        <h2 className="font-extrabold text-center text-green-800 font-serif text-xl">Percentage Sharing</h2>
+        <h2 className="sharingTopText font-extrabold text-center text-green-800 font-serif text-xl">Percentage Sharing</h2>
             <div className="sharing sm:flex  justify-between bg-green 950 w-8xl ml-2 mr-5 sm:flex-wrap flex flex-wrap gap-2 ">
                 <div className="headqrts bg-green-900 rounded-2xl sm:w-1/4  w-1/4 mt-3 mb-3 ml-20">
                     <p className="text-white p-2 font-bold text-center text-sm">
