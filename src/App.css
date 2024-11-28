@@ -89,9 +89,9 @@ select{
         padding: 8px;
     }
      .header-select{
-        
-        width: 60%;
-        height: 10%;
+        width: 100%;
+        height: 50%;
+        margin-top: 15px;
     }
     .section-header.text{
         font-size: 20px;
@@ -156,6 +156,7 @@ select{
        align-items: center;
        align-self: center;
        justify-content: space-evenly;
+       width: 100%;
     }
     .sharing div{
         margin-right: -4rem;
@@ -163,6 +164,7 @@ select{
         text-align: left;
         padding-left: 10px;
         width: 30%;
+        height: 29%;
         gap: -4px;
         
     }
