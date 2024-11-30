@@ -53,7 +53,7 @@ const Modal = ({ onClose, data }) => {
         <p>Total Income: <span>{data.totalIncome}</span></p>
         <p>Expenditures: <span>{data.expenditures}</span></p>
         <p>Balance: <span>{data.unitExpen}</span></p>
-        <hr />
+        <hr  className="line"/>
         <h2>Percentage Sharing</h2>
         <p>Unit: <span>{data.unit}</span></p>
         <p>Chapter: <span>{data.chapter}</span></p>
