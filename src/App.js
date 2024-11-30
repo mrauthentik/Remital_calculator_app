@@ -2,7 +2,6 @@ import './App.css';
 import Header from './components/Header';
 import Main from './components/Main';
 import Modal from './components/Modal'
-import Calculator from './components/calculator';
 import { useState, useEffect } from 'react';
 import { toast, ToastContainer } from 'react-toastify'
 import logo from './Horemow.png'
@@ -111,7 +110,6 @@ function App() {
         unitExpen={unitExpen}
         show = {handleShowModal}
       />
-      <Calculator/>
       
 
       {showModal && (
