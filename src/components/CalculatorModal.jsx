@@ -9,6 +9,7 @@ const CalculatorModal = ({ isModalOpen, toggleModal, input, setInput, calculateR
   const handleInput = (value) => {
     setInput((prev) => prev + value);
   };
+  
 
   // Handle keyboard input for backspace and other keys
   useEffect(() => {

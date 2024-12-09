@@ -25,16 +25,31 @@ export default function Main({
   unit,
   unitExpen,
   show,
+  title,
+  setTitle
 }){
     const playSuccessSound = () =>{
         const audio = new Audio('/success.mp3')
         audio.play()
     }
+    const zoneDisplay = "0.2% Zone"
+    const stateDisplay = "0.5% State"
     
      return(
         <section className="bg-cover h-screen" style={{backgroundImage: `url (${writing})`}} >
             <h1 className="section-header-text text-black font-bold text-4xl text-center"> Monthly Calculator</h1>
             <p className=" main-top-text text-black text-center">Change your percentage formular at the top right of the page</p>
+                        <div className="label-text">
+
+                <label >Title your Remital</label>
+                        </div>
+             <div className="title-bar">
+                <input type="text" name="" id="" placeholder="e.g Garam Unit Novemeber Report 2024"  
+                className=" title sm:mt-10 rounded-1xl bg-gray-200  rounded-lg p-4 focus:outline-none "
+                value={title}
+                onChange={(e)=>{ setTitle(e.target.value)}}
+                />
+             </div>
 
             <div className="howitworksSection flex flex-wrap gap-2 mr-2 mt-10 sm:justify-center text-left relative">
                 
@@ -117,18 +132,16 @@ export default function Main({
             <div className="sharing sm:flex  justify-between bg-green 950 w-8xl ml-2 mr-5 sm:flex-wrap flex flex-wrap gap-1 ">
                 <div className="headqrts bg-green-900 rounded-2xl sm:w-1/4  w-1/4 mt-3 mb-3 ml-20">
                     <p className="text-white p-2 font-bold text-center text-sm">
-                        0.5%
-                        Headquaters: 
+                       {selectOption === 'State' ? '0.3' + "% ":'0.5' + "%  "}
+                         Headquaters: 
                     </p>
                     <div id="headqrts" className="text-green-500 text-xl text-center font-bold text-sm">{headquarters}</div>
 
                 </div>
                 <div className="zone bg-green-900 rounded-2xl sm:w-1/4 w-1/4 mt-3 mb-3 ml-20">
-                    <p className="text-white p-2 font-bold text-center text-sm" id="zoneP">
-                        0.2%
-                       Zone
-                    </p>
+                       {selectOption === 'State' ? ( <p className="text-white p-2 font-bold text-center text-sm" id="zoneP">{stateDisplay}  </p>) : (<p className="text-white p-2 font-bold text-center text-sm" id="zoneP">{zoneDisplay} </p>)}    
                     <div id="zone" className="text-green-500 text-xl text-center font-bold">{zone}</div>
+
 
                 </div>
                 <div className="chapter bg-green-900 rounded-2xl sm:w-1/  w-1/4 mt-3 mb-3 ml-20">
@@ -145,8 +158,22 @@ export default function Main({
                         Unit
                     </p>
                     <div id="unit" className="text-green-500 text-xl text-center font-bold">{unit}</div>
+                    
+                  
 
                 </div>
+                {selectOption === 'State' ? 
+                <div className="unit bg-green-900 rounded-2xl sm:w-1/4 w-1/6 mt-3 mb-3 ml-20">
+                    <p className="text-white p-2 font-bold text-center text-sm">
+                        0.2%
+                        Region
+                    </p>
+                    <div id="unit" className="text-green-500 text-xl text-center font-bold">{0}</div>
+                    
+                  
+
+                </div>
+                : ''}
                 <div className="unit_bf bg-green-900 rounded-2xl sm:w-1/4 w-1/4 mt-3 mb-3 ml-20">
                     <p className="text-white p-2 font-bold text-center text-sm">
                         Unit B/F

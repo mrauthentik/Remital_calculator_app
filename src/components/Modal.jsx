@@ -11,6 +11,7 @@ const Modal = ({ onClose, data }) => {
     doc.setFont("helvetica", "bold");
     const title = `Financial Report for ${data.selectOption}`;
     const titleWidth = doc.getTextWidth(title);
+    doc.text(`${data.title ?? "N/A"}`, 4,150)
     doc.text(title, (doc.internal.pageSize.width - titleWidth) / 2, 10); // Centered Title
 
     // Reset for normal content
@@ -57,10 +58,13 @@ const Modal = ({ onClose, data }) => {
         <h2>Percentage Sharing</h2>
         <p>Unit: <span>{data.unit}</span></p>
         <p>Chapter: <span>{data.chapter}</span></p>
-        <p>Zone: <span>{data.zone}</span></p>
+        {data.selectOption === 'State' ? <p>State: <span>{data.state}</span></p> : <p>Zone: <span>{data.zone}</span></p>} 
         <p>Head Quarters: <span>{data.headquarters}</span></p>
+         <div className="modal-btn">
+
         <button onClick={downloadPDF}>Download as PDF</button>
         <button onClick={onClose}>Close</button>
+         </div>
       </div>
     </div>
   );

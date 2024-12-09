@@ -22,6 +22,8 @@ function App() {
   const [chapter, setChapter] = useState(0);
   const [unit, setUnit] = useState(0);
   const [zonePercentage, setZonePercentage] = useState(0);
+  const [regionPercentage, setRegionPercentage] = useState(0);
+  const [title, setTitle] = useState('')
 
   // Function to calculate the financial data
   const handleCalculate = () => {
@@ -45,11 +47,12 @@ function App() {
         toast.success('Unit has been selected')
       } else if (selectOption === 'State') {
         unitIncome = total * 0.1;
-        setState('40% State');
-        setHeadquarters(total * 0.3);
-        setZone(total * 0.4);
-        setChapter(total * 0.2);
-        setUnit(total * 0.1);
+        setState(total * 0.5);
+        setHeadquarters((total * 0.5)*0.3);
+        setZone(total * 0.5);
+        setRegionPercentage(total * 0.1)
+        setChapter(total * 0.1);
+        setUnit(total * 0.2);
         console.log('There is no remittal settings for State')
         // toast.success('State has been selected!')
         toast.info('State Calculation has not been set correctly.')
@@ -109,6 +112,9 @@ function App() {
         zonePercentage={zonePercentage}
         unitExpen={unitExpen}
         show = {handleShowModal}
+        selectOption={ selectOption}
+        title = {title}
+        setTitle = {setTitle}
       />
       
 
@@ -125,7 +131,9 @@ function App() {
           chapter,
           expenditures,
           unit,
-          selectOption
+          selectOption,
+          title,
+          state
          }}
         />
       )}
