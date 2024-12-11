@@ -10,20 +10,22 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   // State variables for sharing data between components
-  const [selectOption, setSelectOption] = useState('');
+  const [selectOption, setSelectOption] = useState(()=>{ return ''});
   const [offering, setOffering] = useState('');
-  const [tithe, setTithe] = useState("");
+  const [tithe, setTithe] = useState(()=>{return ""} );
   const [expenditures, setExpenditures] = useState("");
   const [totalIncome, setTotalIncome] = useState(0);
   const [unitExpen, setUnitExpen] = useState(0);
   const [headquarters, setHeadquarters] = useState(0);
-  const [state, setState] = useState(0)
+  const [state, setState] = useState(()=> { console.log('function has been called once')
+                                             return 0})
   const [zone, setZone] = useState(0);
   const [chapter, setChapter] = useState(0);
-  const [unit, setUnit] = useState(0);
+  const [unit, setUnit] = useState(()=> { return 0});
   const [zonePercentage, setZonePercentage] = useState(0);
   const [regionPercentage, setRegionPercentage] = useState(0);
   const [title, setTitle] = useState('')
+  const [toastDisplayed, setToastDisplayed] = useState(false)
 
   // Function to calculate the financial data
   const handleCalculate = () => {
@@ -36,7 +38,7 @@ function App() {
       setTotalIncome(total);
 
       let unitIncome = 0;
-      if (selectOption === 'Unit') {
+      if (selectOption === 'Unit' && !toastDisplayed) {
         unitIncome = total * 0.2;
         setZonePercentage('20% Zone');
         setHeadquarters(total * 0.5);
@@ -45,7 +47,7 @@ function App() {
         setUnit(total * 0.2);
         console.log('Unit State has been selected')
         toast.success('Unit has been selected')
-      } else if (selectOption === 'State') {
+      } else if (selectOption === 'State' && !toastDisplayed) {
         unitIncome = total * 0.1;
         setState(total * 0.5);
         setHeadquarters((total * 0.5)*0.3);
@@ -86,6 +88,10 @@ function App() {
   const handleCloseModal = () =>{
     setShowModal(false)
   }
+
+  const resetToast = () =>{
+     setToastDisplayed(false)
+  }
   return (
     <div>
       <ToastContainer />
@@ -93,6 +99,7 @@ function App() {
       image={logo}
       selectOption={selectOption}
       setSelectOption={setSelectOption}
+      resetToast = {resetToast}
       />
       <Main
         offering={offering}
@@ -115,6 +122,7 @@ function App() {
         selectOption={ selectOption}
         title = {title}
         setTitle = {setTitle}
+        resetToast = {resetToast}
       />
       
 

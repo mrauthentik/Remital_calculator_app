@@ -6,7 +6,7 @@ import Calculator_Icon from "@mui/icons-material/Calculate";
 import { Tooltip } from "react-tooltip";
 import CalculatorModal from "./CalculatorModal"; // Importing the modal component
 
-export default function Header({ selectOption, setSelectOption, image }) {
+export default function Header({ selectOption, setSelectOption, image, resetToast }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [input, setInput] = useState("");
 
@@ -77,7 +77,10 @@ export default function Header({ selectOption, setSelectOption, image }) {
         <select
           name="location"
           value={selectOption}
-          onChange={(e) => setSelectOption(e.target.value)}
+          onChange={(e) =>{ 
+            setSelectOption(e.target.value)
+            resetToast()
+          }}
           id="header-select"
           className="header-select rounded bg-green-600 text-white mb-1 p-4 pt-2 w-20 h-12 sm:w-24 focus:outline-none"
         >

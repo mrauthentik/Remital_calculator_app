@@ -26,7 +26,8 @@ export default function Main({
   unitExpen,
   show,
   title,
-  setTitle
+  setTitle,
+  resetToast
 }){
     const playSuccessSound = () =>{
         const audio = new Audio('/success.mp3')
@@ -76,7 +77,11 @@ export default function Main({
                         <input 
                         type="number" 
                         value={tithe}
-                        onChange={(e)=> setTithe(e.target.value)}
+                        onChange={(e)=> {
+                            setTithe(e.target.value)
+                            resetToast()
+                        }}
+                        
                         placeholder="Tithe" 
                         required 
                         className="mb-5  sm:mt-10 rounded-1xl bg-gray-200 ml-4 ml-4 h-8 rounded-lg p-4 focus:outline-none " />
@@ -85,7 +90,10 @@ export default function Main({
                         placeholder="offering" 
                         required 
                         value={offering}
-                        onChange={(e)=> setOffering(e.target.value)} 
+                        onChange={(e)=> {
+                            setOffering(e.target.value)
+                            resetToast()
+                        }} 
                         className="mb-5 md:mb-0 rounded-1xl bg-gray-200 ml-4 ml-4 h-8 rounded-lg p-4 focus:outline-none"  
                         />
                         <input 
