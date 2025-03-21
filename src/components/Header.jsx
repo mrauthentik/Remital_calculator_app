@@ -1,14 +1,25 @@
 // src/components/Header.jsx
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import writing from "../images/writing.jpg";
-import Calculator_Icon from "@mui/icons-material/Calculate";
+import CalculatorIcon from "@mui/icons-material/Calculate";
 import { Tooltip } from "react-tooltip";
+import { evaluate } from "mathjs";
 import CalculatorModal from "./CalculatorModal"; // Importing the modal component
+import { toast } from "react-toastify";
 
 export default function Header({ selectOption, setSelectOption, image, resetToast }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [input, setInput] = useState("");
+  const [prevselectOption, setPrevSelectOption] = useState("");
+
+useEffect(() => {
+   if(prevselectOption && selectOption !== prevselectOption){
+     toast(`Option changed to ${selectOption}`,)
+   }
+   setPrevSelectOption(selectOption)
+
+}, [selectOption, prevselectOption])
 
   // Toggle Modal
   const toggleModal = () => {
@@ -23,12 +34,13 @@ export default function Header({ selectOption, setSelectOption, image, resetToas
   // Calculate result
   const calculateResult = () => {
     try {
-      const sanitizedInput = input.replace(/[^0-9+\-*/().%]/g, "");
-      setInput(eval(sanitizedInput).toString());
+      const sanitizedInput = input.replace(/[^-()\d/*+.]/g, ''); // Sanitize input
+      setInput(evaluate(sanitizedInput).toString());
     } catch {
       setInput("Error");
     }
   };
+
 
   // Handle percentage logic
   const handlePercentage = () => {
@@ -55,7 +67,7 @@ export default function Header({ selectOption, setSelectOption, image, resetToas
       >
         Remital Calculator
       </h1>
-      <Calculator_Icon
+      <CalculatorIcon
         data-tooltip-id="Calculator"
         className="calculator_icon cursor-pointer"
         onClick={toggleModal} // Open modal on icon click
@@ -72,6 +84,10 @@ export default function Header({ selectOption, setSelectOption, image, resetToas
         handlePercentage={handlePercentage}
         clearInput={clearInput}
       />
+
+      {/* Settings Modal */}
+      {/* <SettingsModal /> */}
+      {/* Select */}
 
       <form action="#">
         <select

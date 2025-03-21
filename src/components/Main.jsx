@@ -4,9 +4,7 @@ import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import EditIcon from '@mui/icons-material/Edit';
 import SendIcon from '@mui/icons-material/Send';
 import CheckIcon from '@mui/icons-material/Check';
-import MoneyIcon from "@mui/icons-material/Money"
 import { green } from "@mui/material/colors";
-import { white } from "@mui/material/colors";
 import { toast } from "react-toastify";
 export default function Main({
     offering,
@@ -140,7 +138,7 @@ export default function Main({
             <div className="sharing sm:flex  justify-between bg-green 950 w-8xl ml-2 mr-5 sm:flex-wrap flex flex-wrap gap-1 ">
                 <div className="headqrts bg-green-900 rounded-2xl sm:w-1/4  w-1/4 mt-3 mb-3 ml-20">
                     <p className="text-white p-2 font-bold text-center text-sm">
-                       {selectOption === 'State' ? '0.3' + "% ":'0.5' + "%  "}
+                       {selectOption === 'State' ? '0.3% ' : '0.5% '}
                          Headquaters: 
                     </p>
                     <div id="headqrts" className="text-green-500 text-xl text-center font-bold text-sm">{headquarters}</div>
