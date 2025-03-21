@@ -69,7 +69,7 @@ export default function Signup() {
             required
           />
         </div>
-        <Link to="/" className="text-center text-cyan-600 text-underline"> Already a user</Link>
+        <Link to="/" className="text-sm text-green-600 mb-4"> Already a user</Link>
         <button
           type="submit"
           className="w-full bg-green-600 text-white p-2 rounded hover:bg-green-700"
