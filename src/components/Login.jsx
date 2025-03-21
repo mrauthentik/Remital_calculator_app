@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import router from '../Routes/Router'
-import  {useNavigate} from 'react-router-dom'
+import  {useNavigate , Link} from 'react-router-dom'
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -55,6 +55,8 @@ const navigate = useNavigate()
             required
           />
         </div>
+        <Link to="/signup"><p >Don't have an account</p></Link>
+         
         <button
           type="submit"
           className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition duration-200"
