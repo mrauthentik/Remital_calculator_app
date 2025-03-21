@@ -7,6 +7,7 @@ export default function Signup() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+    const navigate  = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,6 +16,7 @@ export default function Signup() {
       return;
     }
     // Handle signup logic here
+    navigate('/')
     console.log("Signup successful", { username, email, password });
   };
 

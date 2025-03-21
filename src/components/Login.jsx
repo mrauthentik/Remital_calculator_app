@@ -6,6 +6,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loader, setLoader] = useState(false);
 const navigate = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,10 +14,13 @@ const navigate = useNavigate()
     if (!email || !password) {
       setError("Please fill in all fields.");
       
-    } else {
+    } else {// Proceed with login
       setError("");
-      // Proceed with login
-      navigate('/signup')
+      setLoader(true)
+      setTimeout(()=>{
+        setLoader(false)
+        navigate('/home')
+      })
       console.log("Logging in with:", { email, password });
     }
   };
@@ -55,13 +59,44 @@ const navigate = useNavigate()
             required
           />
         </div>
-        <Link to="/signup"><p >Don't have an account</p></Link>
+        <Link to="/signup">
+            <p className="text-sm text-green-600 mb-4">Don't have an account</p
+        ></Link>
          
         <button
           type="submit"
           className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition duration-200"
+          disabled={loader}
         >
-          Login
+            {
+                loader ? (
+                    <div className="flex items-center justify-center">
+                    <svg
+                      className="animate-spin h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8v8H4z"
+                      ></path>
+                    </svg>
+                  </div>
+                ):(
+                 "Login" 
+                )
+            }
+         
         </button>
       </form>
     </div>
