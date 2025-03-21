@@ -1,18 +1,22 @@
 import React, { useState } from "react";
+import router from '../Routes/Router'
+import  {useNavigate} from 'react-router-dom'
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
+const navigate = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add authentication logic here
     if (!email || !password) {
       setError("Please fill in all fields.");
+      
     } else {
       setError("");
       // Proceed with login
+      navigate('/signup')
       console.log("Logging in with:", { email, password });
     }
   };
