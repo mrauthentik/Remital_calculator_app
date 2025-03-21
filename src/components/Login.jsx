@@ -20,7 +20,7 @@ const navigate = useNavigate()
       setTimeout(()=>{
         setLoader(false)
         navigate('/home')
-      })
+      },3000)
       console.log("Logging in with:", { email, password });
     }
   };
