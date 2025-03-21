@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Signup() {
   const [username, setUsername] = useState("");
@@ -25,6 +26,7 @@ export default function Signup() {
       >
         <h2 className="text-2xl font-bold mb-4 text-center text-green-600">Sign Up</h2>
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+         <p className="text-center text-green-800 p-4 bg-gray-200 mb-4 rounded"> We need these data so you can see your previous record next time you login</p>
         <div className="mb-4">
           <label className="block text-gray-700">Username</label>
           <input
@@ -65,6 +67,7 @@ export default function Signup() {
             required
           />
         </div>
+        <Link to="/" className="text-center text-cyan-600 text-underline"> Already a user</Link>
         <button
           type="submit"
           className="w-full bg-green-600 text-white p-2 rounded hover:bg-green-700"
